@@ -119,3 +119,4 @@ class Transaction
         return $"{Date:d} - {Type} - {Amount:C} - {Description}";
     }
 }
+// thêm các tính năng và không gian để chương trình phát triển
