@@ -42,7 +42,7 @@ class Program
         }
     }
 
-    static void ThemGiaoDich(List<GiaoDich> luongtien)
+    static void ThemGiaoDich(List<GiaoDich> tongluongtien)
     {
         Console.Write("Nhap loai giao dich (Thu/Chi): ");
         string type = Console.ReadLine();
@@ -62,40 +62,40 @@ class Program
         DateTime date = DateTime.Now;
 
         // Tạo đối tượng Transaction và thêm vào danh sách
-        GiaoDich transaction = new GiaoDich(type, amount, description, date);
-        luongtien.Add(transaction);
+        GiaoDich GiaoDichMoi = new GiaoDich(type, amount, description, date);
+        tongluongtien.Add(GiaoDichMoi);
 
         Console.WriteLine("Giao dich duoc them thanh cong.");
     }
 
-    static void HienThiGiaoDich(List<GiaoDich> transactions)
+    static void HienThiGiaoDich(List<GiaoDich> tonggiaodich)
     {
         Console.WriteLine("----- Danh sach giao dich -----");
-        foreach (GiaoDich transaction in transactions)
+        foreach (GiaoDich motgiaodich in tonggiaodich)
         {
-            Console.WriteLine(transaction);
+            Console.WriteLine(motgiaodich);
         }
     }
 
-    static void HienThi_TongThuVaChi(List<GiaoDich> transactions)
+    static void HienThi_TongThuVaChi(List<GiaoDich> tonggiaodich)
     {
-        double totalIncome = 0;
-        double totalExpense = 0;
+        double TongThu = 0;
+        double TongChi = 0;
 
-        foreach (GiaoDich transaction in transactions)
+        foreach (GiaoDich motgiaodich in tonggiaodich)
         {
-            if (transaction.Loai.Equals("Thu", StringComparison.OrdinalIgnoreCase))
+            if (motgiaodich.Loai.Equals("Thu", StringComparison.OrdinalIgnoreCase))
             {
-                totalIncome += transaction.SoTien;
+                TongThu += motgiaodich.SoTien;
             }
-            else if (transaction.Loai.Equals("Chi", StringComparison.OrdinalIgnoreCase))
+            else if (motgiaodich.Loai.Equals("Chi", StringComparison.OrdinalIgnoreCase))
             {
-                totalExpense += transaction.SoTien;
+                TongChi += motgiaodich.SoTien;
             }
         }
 
-        Console.WriteLine($"Tong thu nhap trong 1 thang: {totalIncome:C}");
-        Console.WriteLine($"Tong chi phi trong 1 thang: {totalExpense:C}");
+        Console.WriteLine($"Tong thu nhap trong 1 thang: {TongThu:C}");
+        Console.WriteLine($"Tong chi phi trong 1 thang: {TongChi:C}");
     }
 }
 
@@ -120,3 +120,4 @@ class GiaoDich
     }
 }
 // thêm các tính năng và không gian để chương trình phát triển
+
