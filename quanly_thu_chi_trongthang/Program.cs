@@ -6,7 +6,7 @@ class Program
     static void Main()
     {
         // Khởi tạo danh sách để lưu trữ giao dịch
-        List<Transaction> transactions = new List<Transaction>();
+        List<GiaoDich> luongtien = new List<GiaoDich>();
 
         while (true)
         {
@@ -22,13 +22,13 @@ class Program
             switch (choice)
             {
                 case "1":
-                    AddTransaction(transactions);
+                    ThemGiaoDich(luongtien);
                     break;
                 case "2":
-                    DisplayTransactions(transactions);
+                    HienThiGiaoDich(luongtien);
                     break;
                 case "3":
-                    DisplayTotalIncomeAndExpense(transactions);
+                    HienThi_TongThuVaChi(luongtien);
                     break;
                 case "0":
                     Console.WriteLine("Ung dung ket thuc.");
@@ -42,7 +42,7 @@ class Program
         }
     }
 
-    static void AddTransaction(List<Transaction> transactions)
+    static void ThemGiaoDich(List<GiaoDich> luongtien)
     {
         Console.Write("Nhap loai giao dich (Thu/Chi): ");
         string type = Console.ReadLine();
@@ -62,35 +62,35 @@ class Program
         DateTime date = DateTime.Now;
 
         // Tạo đối tượng Transaction và thêm vào danh sách
-        Transaction transaction = new Transaction(type, amount, description, date);
-        transactions.Add(transaction);
+        GiaoDich transaction = new GiaoDich(type, amount, description, date);
+        luongtien.Add(transaction);
 
         Console.WriteLine("Giao dich duoc them thanh cong.");
     }
 
-    static void DisplayTransactions(List<Transaction> transactions)
+    static void HienThiGiaoDich(List<GiaoDich> transactions)
     {
         Console.WriteLine("----- Danh sach giao dich -----");
-        foreach (Transaction transaction in transactions)
+        foreach (GiaoDich transaction in transactions)
         {
             Console.WriteLine(transaction);
         }
     }
 
-    static void DisplayTotalIncomeAndExpense(List<Transaction> transactions)
+    static void HienThi_TongThuVaChi(List<GiaoDich> transactions)
     {
         double totalIncome = 0;
         double totalExpense = 0;
 
-        foreach (Transaction transaction in transactions)
+        foreach (GiaoDich transaction in transactions)
         {
-            if (transaction.Type.Equals("Thu", StringComparison.OrdinalIgnoreCase))
+            if (transaction.Loai.Equals("Thu", StringComparison.OrdinalIgnoreCase))
             {
-                totalIncome += transaction.Amount;
+                totalIncome += transaction.SoTien;
             }
-            else if (transaction.Type.Equals("Chi", StringComparison.OrdinalIgnoreCase))
+            else if (transaction.Loai.Equals("Chi", StringComparison.OrdinalIgnoreCase))
             {
-                totalExpense += transaction.Amount;
+                totalExpense += transaction.SoTien;
             }
         }
 
@@ -99,24 +99,24 @@ class Program
     }
 }
 
-class Transaction
+class GiaoDich
 {
-    public string Type { get; set; }
-    public double Amount { get; set; }
-    public string Description { get; set; }
-    public DateTime Date { get; set; }
+    public string Loai { get; set; }
+    public double SoTien { get; set; }
+    public string MoTa { get; set; }
+    public DateTime Ngay { get; set; }
 
-    public Transaction(string type, double amount, string description, DateTime date)
+    public GiaoDich(string type, double amount, string description, DateTime date)
     {
-        Type = type;
-        Amount = amount;
-        Description = description;
-        Date = date;
+        Loai = type;
+        SoTien = amount;
+        MoTa = description;
+        Ngay = date;
     }
 
     public override string ToString()
     {
-        return $"{Date:d} - {Type} - {Amount:C} - {Description}";
+        return $"{Ngay:d} - {Loai} - {SoTien:C} - {MoTa}";
     }
 }
 // thêm các tính năng và không gian để chương trình phát triển
