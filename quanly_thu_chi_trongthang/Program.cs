@@ -120,4 +120,11 @@ class GiaoDich
     }
 }
 // thêm các tính năng và không gian để chương trình phát triển
+// Trong C#, một class là một khái niệm quan trọng để tổ chức mã nguồn và mô tả đối tượng.
+// Đối tượng là một thể hiện cụ thể của một class, và class định nghĩa các thuộc tính và hành vi của đối tượng.
+// Class ở đây của ta là GiaoDich, nó sẽ quy định những thuộc tính như: loai, so tien, mota, ngay và những phương thức khởi tạo
+// Class khi được khởi tạo và gán các giá trị vào những thuộc tính thì sẽ thành đối tượng
+// Đối tượng của ta ở đây là GiaoDichMoi (xem thêm ở line 65)
+
+
 
