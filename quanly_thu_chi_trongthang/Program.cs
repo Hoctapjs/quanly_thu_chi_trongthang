@@ -23,7 +23,7 @@ class QuanLyGiaoDich
         DateTime date = DateTime.Now;
 
         // Tạo đối tượng Transaction và thêm vào danh sách
-        GiaoDich GiaoDichMoi = new GiaoDich(type, amount, description, date);
+        GiaoDich GiaoDichMoi = new GiaoDich(type, amount, description, date); // khởi tão đối tượng dựa vào class
         tongluongtien.Add(GiaoDichMoi);
 
         Console.WriteLine("Giao dich duoc them thanh cong.");
