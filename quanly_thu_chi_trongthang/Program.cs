@@ -1,48 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 
-class Program
+class QuanLyGiaoDich
 {
-    static void Main()
-    {
-        // Khởi tạo danh sách để lưu trữ giao dịch
-        List<GiaoDich> luongtien = new List<GiaoDich>();
-
-        while (true)
-        {
-            Console.WriteLine("----- Quan ly thu chi trong 1 thang -----");
-            Console.WriteLine("1. Them giao dich");
-            Console.WriteLine("2. Hien thi giao dich");
-            Console.WriteLine("3. Tong thu chi trong 1 thang");
-            Console.WriteLine("0. Thoat");
-
-            Console.Write("Chon mot chuc nang (0-3): ");
-            string choice = Console.ReadLine();
-
-            switch (choice)
-            {
-                case "1":
-                    ThemGiaoDich(luongtien);
-                    break;
-                case "2":
-                    HienThiGiaoDich(luongtien);
-                    break;
-                case "3":
-                    HienThi_TongThuVaChi(luongtien);
-                    break;
-                case "0":
-                    Console.WriteLine("Ung dung ket thuc.");
-                    return;
-                default:
-                    Console.WriteLine("Chuc nang khong hop le. Vui long chon lai.");
-                    break;
-            }
-
-            Console.WriteLine();
-        }
-    }
-
-    static void ThemGiaoDich(List<GiaoDich> tongluongtien)
+    public static void ThemGiaoDich(List<GiaoDich> tongluongtien)
     {
         Console.Write("Nhap loai giao dich (Thu/Chi): ");
         string type = Console.ReadLine();
@@ -68,7 +29,7 @@ class Program
         Console.WriteLine("Giao dich duoc them thanh cong.");
     }
 
-    static void HienThiGiaoDich(List<GiaoDich> tonggiaodich)
+    public static void HienThiGiaoDich(List<GiaoDich> tonggiaodich)
     {
         Console.WriteLine("----- Danh sach giao dich -----");
         foreach (GiaoDich motgiaodich in tonggiaodich)
@@ -77,7 +38,7 @@ class Program
         }
     }
 
-    static void HienThi_TongThuVaChi(List<GiaoDich> tonggiaodich)
+    public static void HienThi_TongThuVaChi(List<GiaoDich> tonggiaodich)
     {
         double TongThu = 0;
         double TongChi = 0;
@@ -98,6 +59,49 @@ class Program
         Console.WriteLine($"Tong chi phi trong 1 thang: {TongChi:C}");
     }
 }
+
+class Program
+{
+    static void Main()
+    {
+        // Khởi tạo danh sách để lưu trữ giao dịch
+        List<GiaoDich> luongtien = new List<GiaoDich>();
+
+        while (true)
+        {
+            Console.WriteLine("----- Quan ly thu chi trong 1 thang -----");
+            Console.WriteLine("1. Them giao dich");
+            Console.WriteLine("2. Hien thi giao dich");
+            Console.WriteLine("3. Tong thu chi trong 1 thang");
+            Console.WriteLine("0. Thoat");
+
+            Console.Write("Chon mot chuc nang (0-3): ");
+            string choice = Console.ReadLine();
+
+            switch (choice)
+            {
+                case "1":
+                    QuanLyGiaoDich.ThemGiaoDich(luongtien);
+                    break;
+                case "2":
+                    QuanLyGiaoDich.HienThiGiaoDich(luongtien);
+                    break;
+                case "3":
+                    QuanLyGiaoDich.HienThi_TongThuVaChi(luongtien);
+                    break;
+                case "0":
+                    Console.WriteLine("Ung dung ket thuc.");
+                    return;
+                default:
+                    Console.WriteLine("Chuc nang khong hop le. Vui long chon lai.");
+                    break;
+            }
+
+            Console.WriteLine();
+        }
+    }
+}
+
 
 class GiaoDich
 {
