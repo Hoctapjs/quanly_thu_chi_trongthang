@@ -7,7 +7,7 @@ class Program
 {
     static void Main()
     {
-        // Khởi tạo danh sách để lưu trữ giao dịch
+        // Khởi tạo danh sách mới để lưu trữ các đối tượng giao dịch
         List<GiaoDich> luongtien = new List<GiaoDich>();
 
         while (true)
