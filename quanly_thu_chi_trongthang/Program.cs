@@ -61,6 +61,7 @@ class GiaoDich
         Ngay = date;
     }
 
+    // chuyển đổi một đối tượng thành 1 chuỗi
     public override string ToString()
     {
         return $"{Ngay:d} - {Loai} - {SoTien:C} - {MoTa}";
