@@ -80,11 +80,19 @@ namespace quanly_thu_chi_trongthang
                 }
             }
 
+<<<<<<< HEAD
             //Console.WriteLine($"Tong thu nhap trong 1 thang: {TongThu:C}");
             //Console.WriteLine($"Tong chi phi trong 1 thang: {TongChi:C}");
 
             //hello world
             //met lam roi
+=======
+            Console.WriteLine($"Tong thu nhap trong 1 thang: {TongThu:C}");
+            Console.WriteLine($"Tong chi phi trong 1 thang: {TongChi:C}");
+            // comment moi
+>>>>>>> 65b15f8f226647e6a774e86f910a82051023d206
+
+            //kajshdkjahsd
         }
     }
 }
