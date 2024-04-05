@@ -53,6 +53,7 @@ class GiaoDich
     public string MoTa { get; set; }
     public DateTime Ngay { get; set; }
 
+
     public GiaoDich(string type, double amount, string description, DateTime date)
     {
         Loai = type;

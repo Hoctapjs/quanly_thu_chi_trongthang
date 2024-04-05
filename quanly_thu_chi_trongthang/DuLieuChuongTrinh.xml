@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<dsnguoidung>
+	<nguoidung>
+		<username>thanhson</username>
+		<password>123456</password>
+		<dulieu></dulieu>
+	</nguoidung>
+	<nguoidung>
+		<username>phuongnam</username>
+		<password>789456</password>
+		<dulieu></dulieu>
+	</nguoidung>
+	<nguoidung>
+		<username>thanhphong</username>
+		<password>123798</password>
+		<dulieu></dulieu>
+	</nguoidung>
+</dsnguoidung>
