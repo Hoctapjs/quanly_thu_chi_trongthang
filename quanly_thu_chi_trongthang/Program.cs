@@ -7,6 +7,14 @@ class Program
 {
     static void Main()
     {
+        // chức năng đăng nhập
+        // gọi class QuanLyDangNhap
+        //DangNhapManager manager = new DangNhapManager("file.xml");
+        //KiemTraDangNhap(manager);
+
+
+
+
         // Khởi tạo danh sách mới để lưu trữ các đối tượng giao dịch
         List<GiaoDich> luongtien = new List<GiaoDich>();
 
