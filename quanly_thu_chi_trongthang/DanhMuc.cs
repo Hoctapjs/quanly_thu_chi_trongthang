@@ -8,5 +8,6 @@ namespace quanly_thu_chi_trongthang
 {
     internal class DanhMuc
     {
+        //hello
     }
 }
