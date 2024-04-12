@@ -1,4 +1,5 @@
-﻿using System;
+﻿using quanly_thu_chi_trongthang;
+using System;
 using System.Collections.Generic;
 
 
@@ -42,6 +43,7 @@ class Program
                     break;
                 case "0":
                     Console.WriteLine("Ung dung ket thuc.");
+                    Console.WriteLine("hello world");
                     return;
                 default:
                     Console.WriteLine("Chuc nang khong hop le. Vui long chon lai.");
